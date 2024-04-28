@@ -1,9 +1,5 @@
 # Flask stuff
-from flask import Flask, request, abort, jsonify, render_template, redirect, url_for
-import requests
-
-
-
+from flask import Flask, request, abort, jsonify, render_template
 from pokemon_search import PokemonSearch
 import pickle
 
@@ -21,6 +17,7 @@ def index():
     return render_template('index.html')
 
 
+# Accepted the POST call from the search box
 @app.route('/', methods=['POST'])
 def run_user_query():
 

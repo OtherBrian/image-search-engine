@@ -10,7 +10,7 @@ host = window.location.origin
     return query
 }
 
-            // Clears the values in the product form so that it's empty for next use.
+// Clears the search box so that it's empty for next use.
 function clearQueryBox() {
 
     var query = document.getElementById('userQuery')
@@ -19,14 +19,14 @@ function clearQueryBox() {
 
 }
 
-// Shows the table of products, and hides any customer tables on the page.
+// Shows the table of results
 function showResults() {
 
     document.getElementById('result-display').style.display = "block"
 }
 
 
-// Fills each row of the table with the product details acquired via either of the above GET requests.
+// Fills each row of the table with the Pokemon name and images
 function addResultToTable(result){
     tableElem = document.getElementById("resultTable")
     rowElem = tableElem.insertRow(-1)
@@ -38,7 +38,7 @@ function addResultToTable(result){
     var img = document.createElement('img')
     img.width = 100
     img.height = 100
-    img.src = result.image
+    img.src = "https://raw.githubusercontent.com/OtherBrian/image-search-engine/main/" + result.image
     cell2 = rowElem.insertCell(1)
     cell2.append(img)
     }
@@ -47,17 +47,20 @@ function addResultToTable(result){
 // Makes a POST call to the app.py Flask app to run the query.
 function runQuery(){
 
-    query= getUserQuery()
-    console.log(query)
+    // Clear any previous results
+    $('#resultTable tr:not(:first)').remove();
 
+    query= getUserQuery()
+
+    // Send the user query to the app
     $.ajax({
         url: host,
         data:JSON.stringify(query),
         method:"POST",
         dataType:"JSON",
         contentType: "application/json; charset=utf-8",
+        // Popular the results table
         success:function(results){
-            //populateResults(results)
             for (result of results){
                 addResultToTable(result)
                 }
