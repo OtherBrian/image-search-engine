@@ -7,10 +7,15 @@ While this assignment is being assessed, an example of the retrieval app in acti
 ## Repository Contents
 
 **app.py:** This is a Flask app which loads pokemon.pickle, and instantiates a PokemonSearch object. It also renders a simple html page, and formats query results so that they can be easily displayed on the webpage via JavaScript.
+
 **crawler.py** This script crawls each of the Pokémon found on [Bulbapedia](https://bulbapedia.bulbagarden.net/wiki/). As part of the crawling process, the main image for each Pokémon is stored in the images2 folder. The text on each Pokémon's dedicated page is also stored and tokenized. This is saved to pokemon.pickle. 
+
 **pokemon_search.py** This script creates the PokemonSearch class to be used for querying in app.py. The tokenized text for each Pokémon (stored in pokemon.pickle) is used to create an inverted index, which is then used alongside a simple BM25 implementation when a query is provided. 
+
 **pokemon.pickle** The pickle file containing the output of crawler.py.
+
 **images2 folder** This folder contains an image for each Pokémon, as retrieved via crawler.py
+
 **staticpages folder** This folder contains a simple HTML webpage, CSS file and JavaScript file. These provide a basic front end for the Flask app which is being hosted on PythonAnywhere.
 
 **requirements.txt:** The Python libraries required to run the Python scripts in this repository. This can be used to set up a virtual environment to run the script in. You can find more details on this below.
