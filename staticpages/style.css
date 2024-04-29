@@ -1,19 +1,24 @@
-h1, h3  {
-    color: #533E2D;
+h1  {
+    color: #2D1E2F;
+    text-align: center;
 }
 
 p   {
-    color: #A27035;
+    color: #6D4C71;
     margin: 2% 2%;
 }
 
 button {
     background-color:bisque;
     border-radius: 12px;
+    margin: auto;
+    display: inline-block;
+    position: absolute;
+    left: 76%
 }
 
 button:hover {
-    background-color: #4CAF50;
+    background-color: #77AF9C;
     color: white;
 }
 
@@ -23,69 +28,47 @@ table {
 }
 
 tr {
-    color: #A27035;
+    color: #6D4C71;
     text-align: center;
     vertical-align: middle;
     padding: 15px;
 }
 
 th  {
-    color: #533E2D;
+    color: #2D1E2F;
     text-align: center;
     vertical-align: middle;
     padding: 15px;
 }
 
 tr:hover {
-    background-color: #A27035;
+    background-color: #77AF9C;
     color:white;
 }
 
 body{ 
-    background-color: #DDCA7D;
+    background-color: #EFE9F4;
 }
 
-#logo{ 
-    border-radius: 8px;
-    width: 20%;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: 0;
-    border:0;
-    padding:0;
-    background-color: #DDCA7D;
-    float:right 
-}
-
-#logoContainer  {
-    background-color: #DDCA7D;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #533E2D;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: #DDCA7D;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: #A27035;
-}
 .active {
     background-color: #DDCA7D;
     color:#A27035;
+}
+
+.searchBar {
+    width: 50%;
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    margin: auto;
+    display: inline-block; 
+    border-radius: 12px;
+}
+
+.bannerImage{
+    width: 40%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

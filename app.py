@@ -1,4 +1,3 @@
-# Flask stuff
 from flask import Flask, request, abort, jsonify, render_template
 from pokemon_search import PokemonSearch
 import pickle
@@ -6,6 +5,7 @@ import pickle
 
 app = Flask(__name__, static_url_path='', static_folder='staticpages', template_folder='staticpages')
 
+# Loading the pickled scraped data.
 with open('pokemon.pickle', 'rb') as f:
     pokemon_dict = pickle.load(f)
 
@@ -17,7 +17,7 @@ def index():
     return render_template('index.html')
 
 
-# Accepted the POST call from the search box
+# Accept the POST call from the search box
 @app.route('/', methods=['POST'])
 def run_user_query():
 
@@ -28,6 +28,7 @@ def run_user_query():
 
     query_results = pokemon_search.query(query)
 
+    # Storing each Pokemon name and its image into an array of dictionaries
     results = []
 
     for pokemon, image in query_results.items():
@@ -37,15 +38,3 @@ def run_user_query():
         results.append(poke_dict)
 
     return jsonify(results)
-
-
-#if __name__ == '__main__':
- #   with open('pokemon.pickle', 'rb') as f:
-  #      pokemon_dict = pickle.load(f)
-    
-   # pokemon_search = PokemonSearch().create_index(pokemon_dict)
-
-    #user_query = input("Please enter your query: \n")
-    #print("Your results are:")
-    #print(pokemon_search.query(user_query))
-

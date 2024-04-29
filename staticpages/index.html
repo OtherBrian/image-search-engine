@@ -4,11 +4,14 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script type="text/javascript" src="scripts.js"></script>
         <link rel="stylesheet" type="text/css"  href="style.css">
-
     </head>
     <body>
-        <h1>Super Pokemon Search Engine!</h1>
-        <p>Please enter your search query:<input type="text" id="userQuery"><button onclick="runQuery()">Search</button></p>
+        <img src="https://archives.bulbagarden.net/media/upload/d/d2/Pok%C3%A9mon_logo_English.png", class="bannerImage">
+        <h1>My Wonderful Pokemon Search Engine</h1>
+        <div id="searchBox">
+                <input type="text" id="userQuery", placeholder="Please enter your search query", class="searchBar">
+                <button onclick="runQuery()", class="searchButton">Search</button>
+        </div>
         <div id="result-display">
             <table id="resultTable" class="result">
                 <tr>
@@ -17,4 +20,7 @@
             </table>
         </div>
     </body>
+    <footer>
+        <p>This webpage is an example of an image search engine, submitted as a college project.</br>The images returned by this search are sourced from  <a href="https://bulbapedia.bulbagarden.net/wiki/Main_Page">Bulbapedia</a></p>
+    </footer>
 </html>
