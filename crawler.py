@@ -10,9 +10,9 @@ nltk.download('stopwords')
 
 def get_pokemon():
     '''
-    Crawls the main index of bulbapedia to get the names of each Pokemon.
+    Crawls the main index of Bulbapedia to get the names of each Pokemon.
     Returns a dictionary with the names of each Pokemon as the key.
-    Each Pokemon has a subdictionary for which url is currently their only key.
+    Each Pokemon has a subdictionary for which URL is currently their only key.
     '''
 
     pokemon_dict = {}
